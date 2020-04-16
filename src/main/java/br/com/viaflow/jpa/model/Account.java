@@ -101,15 +101,18 @@ public class Account {
 	
 	public void transfere(double value, Account destino) throws Exception {
 		BigDecimal v = BigDecimal.valueOf(value).setScale(2);
+		boolean testAccount = destino.accountType.equals(AccountType.Salario);
 		int result2 = this.saldo.compareTo(v);
 		if(result2 == -1) {
 			throw new Exception("Saldo insuficiente! Você possui R$ " + this.saldo + " disponíveis");
 		}
-		else {
+		else if(testAccount == true) {
+			throw new Exception("Não é permitido realizar transferências para uma conta salário");
+		} else {
 			this.saldo = this.saldo.subtract(v);
-			destino.saldo = destino.saldo.add(v);
+			destino.saldo = destino.saldo.add(v);}
 		}
 		
 	}
 
-}
+

@@ -18,14 +18,21 @@ public class Transaction {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	private String descricao;
 	@Enumerated(EnumType.STRING)
 	private TransactionType transactionType;
 	private LocalDateTime data;
 	private BigDecimal valor;
 	@ManyToOne
 	private Account account;
-	
-	
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 
 	public BigDecimal getValor() {
 		return valor;

@@ -7,6 +7,7 @@ import javax.persistence.Persistence;
 import br.com.viaflow.jpa.model.Account;
 import br.com.viaflow.jpa.model.AccountType;
 import br.com.viaflow.jpa.model.Client;
+import br.com.viaflow.jpa.model.ClientGender;
 	
 public class TesteConta {
 
@@ -17,8 +18,12 @@ public class TesteConta {
 		
 		
 		Client client = new Client();
-		client.setName("Joaquim");
-		client.setAddress("Rua Vue, 5247");
+		client.setName("João");
+		client.setAddress("Rua SQL, 5247");
+		client.setClientGender(ClientGender.Masculino);
+		client.setCpf("063.054.890-55");
+		client.setEmail("joao.1234@outlook.com.br");
+		client.setPhone("51982653020");
 		
 		Account account = new Account();
 		account.setClient(client);

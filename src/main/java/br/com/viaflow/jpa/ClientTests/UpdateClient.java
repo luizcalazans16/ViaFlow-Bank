@@ -16,13 +16,13 @@ public class UpdateClient {
 		
 
 		Client client = new Client();
-		client.setId(1L);
-		client.setAddress("Rua Brasil, 1100");
-		client.setName("Luiz");
-		client.setCpf("06206496589");
-		client.setClientGender(ClientGender.Masculino);
-		client.setEmail("luizfernando.calazans8@gmail.com");
-		client.setPhone("30513921");
+		client.setId(5L);
+		client.setAddress("Rua Vue, 1100");
+		client.setName("Marcos");
+		//client.setCpf("06206496589");
+		//client.setClientGender(ClientGender.Masculino);
+		//client.setEmail("luizfernando.calazans8@gmail.com");
+		//client.setPhone("30513921");
 //		System.out.println("Nome atual: " + client.getName());
 //		System.out.println("Telefone atual: " + client.getPhone());
 //		client.setName("Luiz Fernando Calazans");
