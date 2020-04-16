@@ -29,7 +29,7 @@ public class TesteConta {
 		account.setClient(client);
 		account.setAgency(1234);
 		account.setAccountNumber(4789);
-		account.setAccountType(AccountType.Corrente);
+		account.setAccountType(AccountType.Poupanca);
 		
 		
 		entityManager.getTransaction().begin();
