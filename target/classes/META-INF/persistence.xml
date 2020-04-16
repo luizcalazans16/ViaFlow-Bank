@@ -7,6 +7,7 @@ version="2.0">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>br.com.viaflow.jpa.model.Account</class>
         <class>br.com.viaflow.jpa.model.Client</class>
+        <class>br.com.viaflow.jpa.model.Transaction</class>
         
 
         <properties>

@@ -17,13 +17,13 @@ public class TesteConta {
 		
 		
 		Client client = new Client();
-		client.setName("Marcos");
-		client.setAddress("Rua SQL, 5247");
+		client.setName("Joaquim");
+		client.setAddress("Rua Vue, 5247");
 		
 		Account account = new Account();
 		account.setClient(client);
 		account.setAgency(1234);
-		account.setAccountNumber(5464);
+		account.setAccountNumber(4789);
 		account.setAccountType(AccountType.Corrente);
 		
 		

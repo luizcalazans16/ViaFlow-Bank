@@ -32,7 +32,11 @@ public class AccountOperation {
 				a = account.getId();
 			}
 			Account account = entityManager.find(Account.class, a);
-			account.deposita(290);
+			try {
+				account.deposita(290);
+			} catch (Exception ex) {
+				System.out.println(ex.getMessage());
+			}
 
 			entityManager.getTransaction().begin();
 			entityManager.merge(account);

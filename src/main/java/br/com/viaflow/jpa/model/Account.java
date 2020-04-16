@@ -77,37 +77,39 @@ public class Account {
 		this.accountNumber = accountNumber;
 	}
 
-	int result;
-	public void saca(double value) {
+	
+	public void saca(double value) throws Exception {
 		BigDecimal v = BigDecimal.valueOf(value).setScale(2);
-		result = this.saldo.compareTo(v);
-		if (this.result == -1) {
-			throw new SaldoInsuficienteException("Saldo: " + this.saldo + "Valor: " + value);
+		int result = this.saldo.compareTo(v);
+		if (result == -1) {
+			throw new Exception("Saldo insuficiente! Você possui R$ " + this.saldo + " disponíveis para saque.");
 		} else {
-			this.saldo.subtract(v);
+			this.saldo = this.saldo.subtract(v);
 		}
 	}
 
-	public void deposita(double value) {
+	public void deposita(double value) throws Exception {
 		BigDecimal v = BigDecimal.valueOf(value).setScale(2);
-		this.saldo = this.saldo.add(v);
+		
+		if(v.compareTo(BigDecimal.ZERO) == 0) {
+			throw new Exception("Valor inválido");
+		}else {
+		this.saldo = this.saldo.add(v); 
+		}
 	}
 
-	int result2;
-	public void transfere(double value, Account destino) {
+	
+	public void transfere(double value, Account destino) throws Exception {
 		BigDecimal v = BigDecimal.valueOf(value).setScale(2);
-		result2 = this.saldo.compareTo(v);
+		int result2 = this.saldo.compareTo(v);
 		if(result2 == -1) {
-			throw new SaldoInsuficienteException("Saldo insuficiente");
+			throw new Exception("Saldo insuficiente! Você possui R$ " + this.saldo + " disponíveis");
 		}
 		else {
-			this.saldo.subtract(v);
-			destino.saldo.add(v);
+			this.saldo = this.saldo.subtract(v);
+			destino.saldo = destino.saldo.add(v);
 		}
 		
-		
-		
-
 	}
 
 }
